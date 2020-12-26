@@ -40,6 +40,29 @@
 			"isSkipTaskOnFailure": false,
 			"name": "${DIL_ENVIRONMENT_NAME}",
 			"kind": "Task"
+		},
+		{
+			"phase": "code-churn/master/DEV",
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|code-churn/main",
+					"buildNumber": "%code-churn.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": false,
+			"isSkipTaskOnFailure": true,
+			"name": "DEV",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
+			"parameters": {
+				"changeId": "%code-churn.last_successful_change%",
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"code-churn"
+			]
 		}
 	],
 	"parameters": [
