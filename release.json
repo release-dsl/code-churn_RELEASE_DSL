@@ -40,14 +40,14 @@
 			"isOnFailurePhaseEnabled": false,
 			"isSkipTaskOnFailure": true,
 			"name": "${DIL_ENVIRONMENT_NAME}",
-			"plugin": "ADAPTIVE TESTING/1.1.1|2",
+			"plugin": "ADAPTIVE TESTING/${DIL_ADAPTIVE_TESTING_PLUGIN_VERSION}",
 			"parameters": {
-				"changeId": "%code-churn.last_successful_change%",
+				"changeId": "%${DIL_REPOSITORY_NAME}.last_successful_change%",
 				"runOnlySubset": "false"
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"code-churn"
+				"${DIL_REPOSITORY_NAME}"
 			]
 		}
 	],
@@ -63,6 +63,10 @@
 		{
 			"name": "DIL_ENVIRONMENT_NAME",
 			"value": "DEV"
+		},
+		{
+			"name": "DIL_ADAPTIVE_TESTING_PLUGIN_VERSION",
+			"value": "1.1.1|2"
 		}
 	]
 }
