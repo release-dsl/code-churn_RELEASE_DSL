@@ -17,6 +17,14 @@
 			"runOnCreation": false
 		},
 		{
+			"release": "${DIL_REPOSITORY_NAME}/${DIL_REPOSITORY_BRANCH}",
+			"isProduction": false,
+			"releaseTokenTemplate": "NUMBER_OF_FLAKY_TEST_SUITES",
+			"scope": "RELEASE_SCOPE",
+			"value": "",
+			"kind": "ReleaseToken"
+		},
+		{
 			"kind": "Phase",
 			"name": "${DIL_ENVIRONMENT_NAME}",
 			"release": "${DIL_REPOSITORY_NAME}/${DIL_REPOSITORY_BRANCH}",
