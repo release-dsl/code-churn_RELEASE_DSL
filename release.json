@@ -28,6 +28,7 @@
 			]
 		},
 		{
+			"kind": "Task",
 			"phase": "${DIL_REPOSITORY_NAME}/${DIL_REPOSITORY_BRANCH}/${DIL_ENVIRONMENT_NAME}",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
@@ -36,24 +37,9 @@
 					"buildNumber": "%${DIL_REPOSITORY_NAME}.last_successful_change%"
 				}
 			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"name": "${DIL_ENVIRONMENT_NAME}",
-			"kind": "Task"
-		},
-		{
-			"phase": "code-churn/master/DEV",
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|code-churn/main",
-					"buildNumber": "%code-churn.last_successful_change%"
-				}
-			],
 			"isOnFailurePhaseEnabled": false,
 			"isSkipTaskOnFailure": true,
-			"name": "DEV",
-			"kind": "Task",
+			"name": "${DIL_ENVIRONMENT_NAME}",
 			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
 				"changeId": "%code-churn.last_successful_change%",
